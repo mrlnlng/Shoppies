@@ -48,7 +48,7 @@ const SearchResult = ({ movieTitle, setNominations, nominations }) => {
       <div className={classes.resultsFor}>Results for "{movieTitle}"</div>
       <div className={classes.container}>
 
-        {movieResults.length === 0 && <div className={classes.noResults}>No results found </div>}
+        {movieResults.length === 0 && <div className={classes.noResults}>No results found. Try entering more characters or look up a different movie.</div>}
         {movieResults.map((movie, index) => {
           return (
             <MovieCard
