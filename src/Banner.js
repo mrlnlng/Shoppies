@@ -50,7 +50,7 @@ const useStyle = makeStyles({
   },
 });
 
-const Banner = ({ nominations, setNominations }) => {
+const Banner = ({ nominations, setNominations, setMovieTitle }) => {
     let props;
     const phoneMatches = useMediaQuery('(min-width: 800px)')
   const [confetti, setConfetti] = useState(false);
@@ -70,6 +70,7 @@ const Banner = ({ nominations, setNominations }) => {
   }, []);
   const handleClick = () => {
     setNominations([]);
+    setMovieTitle("")
     setConfetti(false);
   };
   return (
