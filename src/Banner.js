@@ -7,13 +7,14 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 const useStyle = makeStyles({
   container: {
     width: "100%",
-    height: "100%",
+    // height: "100%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    minHeight : "100vh",
     justifyContent: "center",
     background: "hsla(0, 0%, 0%, 0.3)",
-    position: "fixed", /* Stay in place */
+    position: "absolute", /* Stay in place */
     zIndex: "1", /* Sit on top */
     left: "0",
     top: "0",
@@ -30,7 +31,8 @@ const useStyle = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     padding: "1rem",
-    zIndex: "10"
+    zIndex: "10",
+    overflowY : "auto"
   }),
   bannerTitle: {
     fontSize: "1.75rem",
