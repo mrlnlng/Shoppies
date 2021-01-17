@@ -1,29 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
-
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyle = makeStyles({
-  container: {
+  container: (props) => ({
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
+    flexDirection: props.flexDirection,
+    justifyContent: "center",
     alignItems: "center",
     marginTop: "1rem",
     marginBottom: "1rem",
-    width: "50vw",
-},
-titleContainer: {
+    width: "100%",
+  }),
+  titleContainer: {
     marginLeft: "1rem",
     marginRight: "1rem",
-},
-nominateButton: {
+  },
+  nominateButton: props => ({
     color: "#FFFFFF",
     fontWeight: "600",
     boxShadow: "none",
+    marginTop: "0.25rem",
+    width: props.width,
     textTransform: "none",
-    borderRadius: "0.5rem"
-},
-whiteCard: {
+    borderRadius: "0.5rem",
+    textAlign: "center"
+
+  }),
+  whiteCard: (props) => ({
     borderRadius: "0.5rem",
     border: ".01rem",
     padding: ".5rem",
@@ -32,13 +36,28 @@ whiteCard: {
     width: "80%",
     color: "#FFFFFF",
     background: "#1F3E45",
-    marginRight: "1rem"
-},
+    marginRight: props.marginRight,
+  }),
 });
 const MovieCard = ({ movie, nominations, setNominations }) => {
-  const classes = useStyle();
+  const phoneMatches = useMediaQuery("(max-width: 800px)");
+  let props;
+  if (phoneMatches) {
+    props = {
+      flexDirection: "column",
+      marginRight: "0rem",
+      width: "91.5%"
+
+    };
+  } else {
+    props = {
+      flexDirection: "row",
+      marginRight: "1rem",
+      width: ""
+    };
+  }
+  const classes = useStyle(props);
   let { Title, Year, Poster } = movie;
-  // console.log(nominations)
   let nominated = nominations.indexOf(movie) !== -1;
   const handleClick = () => {
     if (nominations.length <= 5) {
@@ -75,7 +94,12 @@ const MovieCard = ({ movie, nominations, setNominations }) => {
               Nominate
             </Button>
           ) : (
-            <Button color="secondary" variant="contained" className={classes.nominateButton} onClick={handleClick}>
+            <Button
+              color="secondary"
+              variant="contained"
+              className={classes.nominateButton}
+              onClick={handleClick}
+            >
               Nominate
             </Button>
           )}

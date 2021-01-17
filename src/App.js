@@ -2,12 +2,10 @@ import "./App.css";
 import Search from "./Search";
 import {
   makeStyles,
-  responsiveFontSizes,
   ThemeProvider,
 } from "@material-ui/core/styles";
 import Header from "./Header";
 import { createMuiTheme } from "@material-ui/core/styles";
-import Banner from "./Banner";
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -29,7 +27,8 @@ const useStyle = makeStyles({
     fontWeight: "500",
     flexDirection: "column",
     alignItems: "center",
-    width: "100vw",
+    justifyContent: "center",
+    // width: "100vw",
     backgroundColor: "#1C3A41",
     margin: "0",
     padding: "0",

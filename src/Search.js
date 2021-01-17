@@ -12,7 +12,15 @@ const useStyle = makeStyles({
     display: "flex",
     flexDirection: props.flexDirection,
     marginTop: "1rem",
-    maxWidth: "100vw",
+    maxWidth: props.maxWidth,
+    justifyContent: "center",
+    alignItems: props.alignItems,
+    "& > div": {
+      width : "60%",
+        margin: "1rem",
+    },
+    width: "70rem",
+    margin: "1.5rem",
   }),
   searchContainer: {
     display: "flex",
@@ -21,7 +29,6 @@ const useStyle = makeStyles({
   nomBoard: (props) => ({
     marginTop: props.marginTop,
     marginLeft: props.marginLeft,
-    width: props.width,
   }),
 });
 const Search = () => {
@@ -35,14 +42,17 @@ const Search = () => {
       flexDirection: "column",
       marginTop: "1rem",
       marginLeft: "0rem",
-      width: "100vw",
+      maxWidth: "100%",
+      alignItems: "center"
     };
   } else {
     props = {
       flexDirection: "row",
       marginTop: "0rem",
       marginLeft: "1rem",
-      width: "25vw",
+      marginBottom: "0rem",
+      maxWidth: "100%",
+      alignItems: "flex-start"
     };
   }
   const classes = useStyle(props);

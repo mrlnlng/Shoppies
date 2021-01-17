@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import NomCard from "./NomCard";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -8,18 +7,20 @@ const useStyle = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     fontWeight: "600",
     background: "#2F5159",
     padding: "1.1rem",
     borderRadius: "0.5rem",
-    // marginLeft: "1rem",
     color: "#FFFFFF",
-    // width: "30vw"
+    // width: "80%"
   },
   containerTitle: {
       fontSize: "1.25rem",
       marginBottom: "1rem"
+  },
+  description: {
+      textAlign: "center"
   }
 });
 const NomationationBoard = ({ nominations, setNominations }) => {
@@ -43,7 +44,7 @@ const NomationationBoard = ({ nominations, setNominations }) => {
             })}
           </>
         ) : (
-          <div>No Movies Nominated</div>
+          <div className={classes.description}>No Movies Nominated</div>
         )}
       </div>
     </>

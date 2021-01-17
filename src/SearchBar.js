@@ -14,7 +14,7 @@ const useStyle = makeStyles({
         borderRadius: "0.5rem"
     },
     input: {
-        width: "50vw",
+        width: "100%",
         padding: ".75rem",
         border: "none",
         borderRadius: "0.25rem",

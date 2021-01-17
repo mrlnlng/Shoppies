@@ -5,7 +5,7 @@ import Remove from "./images/close.png";
 const useStyle = makeStyles({
   container: {
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     // marginTop: "1rem",
     // marginBottom: "1rem",
@@ -26,7 +26,7 @@ const useStyle = makeStyles({
     color: "#FFFFFF",
     justifyContent: "space-between",
     background: "#1F3E45",
-    marginRight: "1rem",
+    // marginRight: "1rem",
     "&:hover": {
           filter: "hue-rotate(-9deg) brightness(105%)",
           transitionDuraton : "800ms",
@@ -68,7 +68,7 @@ const NomCard = ({ movie, nominations, setNominations }) => {
             {Title} ({Year})
           </div>
           <div className={classes.remove}>
-            <img src={Remove} height="15" onClick={handleClick} />
+            <img src={Remove} height="15" alt="remove button" onClick={handleClick} />
           </div>
         </div>
       </div>

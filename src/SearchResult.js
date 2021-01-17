@@ -20,6 +20,9 @@ const useStyle = makeStyles({
     padding: "1.1rem",
     borderRadius: "0.5rem",
   },
+  noResults: {
+    color: "#eceff4",
+  }
 });
 const SearchResult = ({ movieTitle, setNominations, nominations }) => {
   // const [movieSearch, setMovieSearch] = useState("");
@@ -44,6 +47,8 @@ const SearchResult = ({ movieTitle, setNominations, nominations }) => {
       {/* {console.log("nomations4", nominations)} */}
       <div className={classes.resultsFor}>Results for "{movieTitle}"</div>
       <div className={classes.container}>
+
+        {movieResults.length === 0 && <div className={classes.noResults}>No results found </div>}
         {movieResults.map((movie, index) => {
           return (
             <MovieCard
