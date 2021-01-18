@@ -57,6 +57,7 @@ const Search = () => {
   }
   const classes = useStyle(props);
   if (nominations.length === 5) {
+    window.scroll(0,0)
     return <Banner nominations={nominations} setNominations={setNominations} setMovieTitle={setMovieTitle} />;
   } else {
     return (

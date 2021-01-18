@@ -26,6 +26,8 @@ const useStyle = makeStyles({
     width: props.width,
     // height: "70vh",
     borderRadius: "0.5rem",
+    marginTop: "1rem",
+    marginBottom: "1rem",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
