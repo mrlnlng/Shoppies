@@ -49,6 +49,11 @@ const useStyle = makeStyles({
   },
   confetti: {
     display: "flex",
+    zIndex : 100,
+    position : "absolute",
+    top : "50vh"
+
+
   },
 });
 
@@ -84,9 +89,6 @@ const Banner = ({ nominations, setNominations, setMovieTitle }) => {
             <WinnerCard key={index} movie={movie} />
           ))}
         </div>
-        <div className={classes.confetti}>
-          <Confetti active={confetti} />
-        </div>
         <div>
           <Button
             onClick={handleClick}
@@ -98,6 +100,9 @@ const Banner = ({ nominations, setNominations, setMovieTitle }) => {
           </Button>
         </div>
       </div>
+        <div className={classes.confetti}>
+          <Confetti active={confetti} />
+        </div>
     </div>
   );
 };

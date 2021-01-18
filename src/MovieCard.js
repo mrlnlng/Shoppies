@@ -15,6 +15,7 @@ const useStyle = makeStyles({
   titleContainer: {
     marginLeft: "1rem",
     marginRight: "1rem",
+    wordWrap: "break-word",
   },
   nominateButton: props => ({
     color: "#FFFFFF",
@@ -33,7 +34,7 @@ const useStyle = makeStyles({
     padding: ".5rem",
     display: "flex",
     alignItems: "center",
-    width: "80%",
+    width: "90%",
     color: "#FFFFFF",
     background: "#1F3E45",
     marginRight: props.marginRight,
@@ -46,7 +47,7 @@ const MovieCard = ({ movie, nominations, setNominations }) => {
     props = {
       flexDirection: "column",
       marginRight: "0rem",
-      width: "91.5%"
+      width: "97.5%"
 
     };
   } else {
