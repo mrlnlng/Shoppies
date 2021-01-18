@@ -16,7 +16,7 @@ const useStyle = makeStyles({
     justifyContent: "center",
     alignItems: props.alignItems,
     "& > div": {
-      width : "60%",
+      width : "90%",
         margin: "1rem",
     },
     width: "70rem",
